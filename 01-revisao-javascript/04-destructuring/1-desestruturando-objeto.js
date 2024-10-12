@@ -2,13 +2,13 @@
 
 // Criação do objeto:
 const pessoa = {
-    nome: 'Lucas',
-    idade: 28,
-    cidade: 'São Paulo'
+  nome: 'Lucas',
+  idade: 28,
+  cidade: 'São Paulo',
 };
 // Desestruturando o objeto:
 // Define uma constante para cada propriedade do objeto, que tiver o mesmo nome que a constante:
-const {nome, cidade} = pessoa;
+const { nome, cidade } = pessoa;
 
-console.log(nome)   // Saída: Lucas
-console.log(cidade) // Saída: São Paulo
+console.log(nome); // Saída: Lucas
+console.log(cidade); // Saída: São Paulo

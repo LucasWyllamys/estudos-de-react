@@ -13,19 +13,17 @@
 */
 
 function FuncaoTradicional() {
-    console.log(this);
-  }
-  
-  const ArrowFunction = () => {
-    console.log(this);
-  }
-  
-  const obj = {
-    metodo: FuncaoTradicional,
-    metodoArrow: ArrowFunction
-  };
-  
-  obj.metodo(); // `this` refere-se a `obj`
-  obj.metodoArrow(); // `this` refere-se ao contexto léxico, não a `obj`
-  
+  console.log(this);
+}
 
+const ArrowFunction = () => {
+  console.log(this);
+};
+
+const obj = {
+  metodo: FuncaoTradicional,
+  metodoArrow: ArrowFunction,
+};
+
+obj.metodo(); // `this` refere-se a `obj`
+obj.metodoArrow(); // `this` refere-se ao contexto léxico, não a `obj`
