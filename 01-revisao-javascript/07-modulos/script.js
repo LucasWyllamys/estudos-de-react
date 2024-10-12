@@ -4,6 +4,7 @@
 - Exemplo: <script type="module" src="script.js"></script> (Só funciona em servidor, seja local ou online. Não irá funcionar se você abrir o html direto)
 - Use a função import{} para importar elementos de outros módulos.
 */
+// Importa as funções areaQuadrado e perimetroQuadrado do módulo quadrado.js:
 import { areaQuadrado, perimetroQuadrado } from './quadrado.js';
 
 console.log(areaQuadrado(3));

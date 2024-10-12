@@ -1,4 +1,4 @@
-// A função fetch, em conjunto com os métodos .then(), .catch() e .json(), é usada para fazer requisições HTTP assíncronas, permitindo que você busque recursos de uma rede, como dados de uma API. A função fetch retorna uma Promise que resolve para a resposta da requisição.
+// A função fetch(), em conjunto com os métodos .then(), .catch() e .json(), é usada para fazer requisições HTTP assíncronas, permitindo que você busque recursos de uma rede, como dados de uma API. A função fetch() retorna uma Promise que resolve para a resposta da requisição.
 // O método .then() define o que fazer quando a promessa é resolvida com sucesso.
 // O método .json() é utilizado para transformar a resposta de uma requisição HTTP em um objeto JavaScript (formato json). Quando você chama .json() em uma resposta, ele retorna uma promessa que resolve para o objeto JSON.
 fetch('https://ranekapi.origamid.dev/json/api/produto')
@@ -27,7 +27,7 @@ const dados = {
   cidade: 'São Félix',
   estado: 'Bahia',
 };
-
+// Escreve os dados do objeto acima no servidor:
 fetch('https://ranekapi.origamid.dev/json/api/usuario', {
   method: 'POST',
   headers: {
