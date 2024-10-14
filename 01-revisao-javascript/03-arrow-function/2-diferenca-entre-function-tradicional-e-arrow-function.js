@@ -25,5 +25,5 @@ const obj = {
   metodoArrow: ArrowFunction,
 };
 
-obj.metodo(); // `this` refere-se a `obj`
-obj.metodoArrow(); // `this` refere-se ao contexto léxico, não a `obj`
+obj.metodo(); // `this` refere-se à `obj`.
+obj.metodoArrow(); // `this` refere-se ao contexto léxico, não à `obj`.

@@ -1,0 +1,56 @@
+body {
+  margin: 0px;
+}
+
+nav {
+  width: 100px;
+  height: 100vh;
+  padding: 0px;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+  display: flex;
+}
+
+ul {
+  margin: auto;
+  list-style: none;
+  padding: 0px;
+}
+
+li {
+  margin: 15px 0px;
+  overflow: hidden; /* Oculta qualquer conteúdo que exceda os limites do elemento. */
+  text-indent: 100px;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  background: #333;
+  width: 24px;
+  height: 24px;
+  border-radius: 30px;
+}
+
+a.active {
+  background: tomato;
+}
+
+.content {
+  padding-left: 100px;
+}
+
+section {
+  background: rgba(0, 0, 0, .2);
+  height: 600px;
+  margin: 20px;
+  border-radius: 4px;
+  display: flex;
+}
+
+section h1 {
+  margin: auto;
+  font-size: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
