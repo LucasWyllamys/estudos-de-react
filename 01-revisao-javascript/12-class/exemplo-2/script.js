@@ -46,7 +46,7 @@ class botaoAtivo extends rolagemSuave {
 
     this.sectionElements = document.querySelectorAll(sections); // Seleciona todas as sections.
     this.handleScroll = this.handleScroll.bind(this); // Garante que o escopo do this no método handleScroll não mude, mantendo a referencia à classe.
-    this.handleScroll();
+    this.handleScroll(); // Ativação inicial para ativar o primeiro botão.
     this.activeNavScroll(); // Ativa o evento scroll.
   }
   // Método que adiciona ou remove a classe 'active' na lista de classes do 'linkElements'.

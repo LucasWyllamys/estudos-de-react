@@ -6,7 +6,7 @@
 */
 
 // 1. Importa as funções areaQuadrado e perimetroQuadrado do módulo quadrado.js:
-import { areaQuadrado, perimetroQuadrado } from './quadrado.js';
+import { areaQuadrado, perimetroQuadrado } from './quadrado.js'; // Desestruturação (não é necessário desestruturar quando é uma função, array ou objeto default)
 
 console.log(areaQuadrado(3));
 console.log(perimetroQuadrado(4));
