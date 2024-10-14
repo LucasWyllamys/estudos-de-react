@@ -1,5 +1,5 @@
 // Retorna as propriedades clientX e clientY do evento 'mousemove' (objeto) sem usar a técnica de desestruturação de objeto.
-function handleMouseMove(event) {
+function handleMouseMove1(event) {
   const clientX = event.clientX;
   const clientY = event.clientY;
   console.log(clientX, clientY);
@@ -7,7 +7,7 @@ function handleMouseMove(event) {
 
 // Desestrutura o objeto:
 // Define uma constante para cada propriedade do objeto, que tiver o mesmo nome que a constante:
-function handleMouseMove(event) {
+function handleMouseMove2(event) {
   const { clientX, clientY } = event;
   console.log(clientX, clientY);
 }

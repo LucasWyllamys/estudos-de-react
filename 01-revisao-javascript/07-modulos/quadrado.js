@@ -1,4 +1,5 @@
-// Escreva o comando 'export' para exportar a função que deseja para outros módulos.
+// 1. Escreva o comando 'export' para exportar a função que deseja para outros módulos:
+
 export function areaQuadrado(lado) {
   return lado * lado;
 }

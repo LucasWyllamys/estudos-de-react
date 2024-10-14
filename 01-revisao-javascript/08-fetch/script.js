@@ -1,21 +1,23 @@
-// A função fetch(), em conjunto com os métodos .then(), .catch() e .json(), é usada para fazer requisições HTTP assíncronas, permitindo que você busque recursos de uma rede, como dados de uma API. A função fetch() retorna uma Promise que resolve para a resposta da requisição.
+// A função fetch() em conjunto com os métodos .then(), .catch() e .json(), é usada para fazer requisições HTTP assíncronas, permitindo que você busque recursos de uma rede, como dados de uma API. A função fetch() retorna uma Promise que resolve para a resposta da requisição.
 // O método .then() define o que fazer quando a promessa é resolvida com sucesso.
 // O método .json() é utilizado para transformar a resposta de uma requisição HTTP em um objeto JavaScript (formato json). Quando você chama .json() em uma resposta, ele retorna uma promessa que resolve para o objeto JSON.
+
+// 1. Consumindo uma API usando a função fetch() e os métodos .then() e .json():
 fetch('https://ranekapi.origamid.dev/json/api/produto')
   .then((response) => response.json())
   .then((jsonBody) => {
     console.log(`Nome: ${jsonBody[3].nome} - Preço: ${jsonBody[3].preco}`); // Saída: Nome: Smartwatch - Preço: 1199
   });
 
-// Faça uma requisição HTTP do tipo POST, PUT, PATCH ou DELETE para enviar dados para um servidor usando o fetch:
+// 2. Faça uma requisição HTTP do tipo POST, PUT, PATCH ou DELETE para enviar dados para um servidor usando o fetch:
 /*
 - method: 'POST' -> Insere um novo recurso no servidor.
 - method: 'PUT' -> Atualiza recursos existentes no servidor.
 - method: 'PATCH' -> Atualiza parcialmente recursos existentes.
 - method: 'DELETE' -> Deleta recursos no servidor.
 */
+// 2.1. Cria um objeto.
 const dados = {
-  // Criação de um objeto.
   id: 'andrerafa',
   nome: 'andre',
   email: 'andrerafa@origamid.com',
@@ -27,7 +29,7 @@ const dados = {
   cidade: 'São Félix',
   estado: 'Bahia',
 };
-// Escreve os dados do objeto acima no servidor:
+// 2.2. Escreve os dados do objeto acima no servidor:
 fetch('https://ranekapi.origamid.dev/json/api/usuario', {
   method: 'POST',
   headers: {

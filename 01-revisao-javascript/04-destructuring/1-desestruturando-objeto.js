@@ -7,7 +7,7 @@ const pessoa = {
   cidade: 'São Paulo',
 };
 // Desestruturando o objeto:
-// Define uma constante para cada propriedade do objeto, que tiver o mesmo nome que a constante:
+// Define uma constante para cada propriedade do objeto que tiver o mesmo nome que a constante:
 const { nome, cidade } = pessoa;
 
 console.log(nome); // Saída: Lucas
