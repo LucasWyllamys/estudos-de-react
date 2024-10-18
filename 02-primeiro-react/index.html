@@ -16,13 +16,57 @@
 
 <body>
   <div id="app">App</div> <!-- Elemento a ser manipulado pelo react. -->
-  <!-- Precisa indicar para o Babel que ele deve transpilar o código. -->
-  <script type="text/babel">  // Necessário indicar o type="text/babel".
-    // Cria um componente chamado App.
-    // O componente retorna JSX e por isso.
-    // o Babel irá transformar o mesmo.
-    function App() {
-      return <div>Meu App</div>;
+
+  <script type="text/babel">  // Necessário indicar o type="text/babel" para indicar para o Babel que ele deve transpilar o código.
+    // Use as {} para executar expressões de JavaScript e mostrar o resultado no DOM.
+
+    const MainNav = () => {
+      return (
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+        </ul>
+      )
+    }
+
+    const Produtos = () => {
+      const produto1 = 'Camisa'
+
+      function Adicionar() {
+        return <button>+</button>
+      }
+
+      function Subtrair() {
+        return <button>+</button>
+      }
+
+      return (
+        <div>
+          <button onClick={Subtrair}>-</button>
+          {produto1} - R$ {Math.round(Math.random() * 100)}
+          <button onClick={Adicionar}>+</button>
+        </div>
+      )
+    }
+
+
+
+    const Button = () => {
+      function handleClick(event) {
+        event.target.innerHTML = event.target.innerHTML === 'Comprar' ? 'Compra Confirmada!' : 'Comprar'
+      }
+      return <button onClick={handleClick}>Comprar</button>
+    }
+
+    // Cria um componente chamado App, o componente retorna JSX e o Babel irá transformar em um componente react.
+    const App = () => {
+      return (
+        <div>
+          <MainNav />       {/*Componente reutilizável dentro de outro!*/}
+          <Produtos />
+          <Button />
+        </div>
+      )
     }
 
     // Renderiza o componente App no elemento que tiver id = app
