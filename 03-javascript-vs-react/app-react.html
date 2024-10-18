@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App React</title>
+  <!-- Carrega o React, React Dom e Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="app-react"></div> <!--Elemento HTML usado como raiz para renderizar o React na tela por meio de uma função.-->
+
+  <script type="text/babel">
+    // Função que retorna um JSX (parecido com HTML)
+    const CountClicks = () => {
+      const [count, setCount] = React.useState(0) // Função Hooks que atualiza um estado.
+      return <div>
+        <p>Você clicou {count} vezes.</p>
+        <button onClick={() => setCount(count + 1)}>Clique aqui</button>
+      </div>
+    }
+
+    ReactDOM.createRoot(document.getElementById('app-react')).render(<CountClicks />) // Renderiza a função CountClicks na raiz (ReactDom.createRoot(document.getElementById('app-react'))) do react.
+  </script>
+</body>
+
+</html>

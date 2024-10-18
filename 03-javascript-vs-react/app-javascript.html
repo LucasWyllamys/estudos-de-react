@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App JavaScript</title>
+</head>
+
+<body>
+  <!--Elementos HTML:-->
+  <div id="app-javascript">
+    <p>Você clicou <span id="qtdClicks"></span> vezes.</p>
+    <button id="button">Clique aqui</button>
+  </div>
+
+  <script type="application/javascript">
+    // Selecionar elementos HTML no JavaScript:
+    const qtdClicks = document.getElementById('qtdClicks')
+    const button = document.getElementById('button')
+
+    let count = 0
+
+    // Função que renderiza (exibe) na UI:
+    function renderValues(count) {
+      qtdClicks.innerText = count
+    }
+
+    renderValues(count) // Renderiza o valor 0 (count = 0) inicialmente.
+
+    // Evento:
+    button.addEventListener('click', () => {
+      count = count + 1
+      renderValues(count)
+    })
+  </script>
+</body>
+
+</html>

@@ -5,11 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>React para Iniciantes</title>
-
   <!-- Carrega o React, React Dom e Babel -->
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
   <!-- Don't use this in production (Babel converte arquivo .jsx em .js) -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
@@ -21,35 +19,30 @@
     // Use as {} para executar expressões de JavaScript e mostrar o resultado no DOM.
 
     const MainNav = () => {
-      return (
-        <ul>
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
-        </ul>
-      )
+      return <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
     }
 
     const Produtos = () => {
+      const [count, setCount] = React.useState(1) // Este método (Hooks) retorna um array [estado, função que atualiza o valor do estado]. Com relação a construção do método React.useState(), o vai dentro do parêntese é o argumento que define o estado inicial, que neste caso é 1.
       const produto1 = 'Camisa'
 
       function Adicionar() {
-        return <button>+</button>
+        setCount(count + 1) // Atualiza o valor do estado.
       }
 
       function Subtrair() {
-        return <button>+</button>
+        setCount(count - 1) // Atualiza o valor do estado.
       }
 
-      return (
-        <div>
-          <button onClick={Subtrair}>-</button>
-          {produto1} - R$ {Math.round(Math.random() * 100)}
-          <button onClick={Adicionar}>+</button>
-        </div>
-      )
+      return <div>
+        <button onClick={Subtrair}>-</button>
+        {` ${count} ${produto1}`} - R$ {`${parseFloat('10.00')}` * count + ' '}
+        <button onClick={Adicionar}>+</button>
+      </div>
     }
-
-
 
     const Button = () => {
       function handleClick(event) {
@@ -60,13 +53,11 @@
 
     // Cria um componente chamado App, o componente retorna JSX e o Babel irá transformar em um componente react.
     const App = () => {
-      return (
-        <div>
-          <MainNav />       {/*Componente reutilizável dentro de outro!*/}
-          <Produtos />
-          <Button />
-        </div>
-      )
+      return <div>
+        <MainNav />       {/*Componente reutilizável dentro de outro!*/}
+        <Produtos />
+        <Button />
+      </div>
     }
 
     // Renderiza o componente App no elemento que tiver id = app
