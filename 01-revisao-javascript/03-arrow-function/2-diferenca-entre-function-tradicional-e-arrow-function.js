@@ -12,18 +12,22 @@
 - Arrow function: Não pode ser usada como construtor e lançará um erro se tentar usar new.
 */
 
-function FuncaoTradicional() {
-  console.log(this);
-}
-
-const ArrowFunction = () => {
-  console.log(this);
-};
-
 const obj = {
-  metodo: FuncaoTradicional,
-  metodoArrow: ArrowFunction,
+  name: "Lucas Wyllamys",
+
+  normalFunc: function() {
+    console.log(this.name)  // Aqui, this refere-se ao objeto 'obj' no qual
+  },
+  arrowFunc: () => {
+    console.log(this.name)  // Aqui, thi refere-se ao escopo onde foi definido (global ou exterior)
+  }
 };
 
-obj.metodo(); // `this` refere-se à `obj`.
-obj.metodoArrow(); // `this` refere-se ao contexto léxico, não à `obj`.
+obj.normalFunc(); // Saída: Lucas Wyllamys
+obj.arrowFunc(); // Saída: underfined, porque this não aponta para 'obj'
+
+/*
+Principais Considerações
+  - Use arrow functions quando quiser herdar o this do contexto externo, como em callbacks, métodos de promessas, e funções passadas para manipuladores de eventos.
+  - Evite usar arrow functions como métodos de objetos (propriedades que são funções) quando você precisa que this aponte para o próprio objeto.
+*/
